@@ -1,0 +1,14 @@
+import React from 'react';
+
+function Child(props) {
+  return (
+    <div>
+      <ol>
+        <li>{props.value}</li>
+        <button type="button" onClick={props.handle}>Complete</button>
+      </ol>
+    </div>
+  );
+}
+
+export default Child;
