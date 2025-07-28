@@ -3,9 +3,9 @@ import Child from './Child'; // Ensure you import your Child component
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { text: 'Todo 1', completed: false },
-    { text: 'Todo 2', completed: false },
-    { text: 'Todo 3', completed: false },
+    { text: 'Learn React', completed: false },
+    { text: 'Build a React app', completed: false },
+    { text: 'Deploy the React app', completed: false },
   ]);
 
   const handleComplete = (index) => {
