@@ -4,8 +4,12 @@ function Child(props) {
   return (
     <div>
       <ol>
-        <li>{props.value}</li>
-        <button type="button" onClick={props.handle}>Complete</button>
+        <li>
+          {props.value} 
+          {props.completed ? " (Completed)" : (
+            <button type="button" onClick={props.handle}>Complete</button>
+          )}
+        </li>
       </ol>
     </div>
   );
