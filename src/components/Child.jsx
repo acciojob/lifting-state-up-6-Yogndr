@@ -3,14 +3,14 @@ import React from 'react';
 function Child(props) {
   return (
     <div>
-      <ol>
+      <ul>
         <li>
           {props.value} 
           {props.completed ? " " : (
             <button type="button" onClick={props.handle}>Complete</button>
           )}
         </li>
-      </ol>
+      </ul>
     </div>
   );
 }
