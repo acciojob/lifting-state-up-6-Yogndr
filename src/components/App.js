@@ -1,36 +1,31 @@
-import React, { useState } from 'react';
-import Child from './Child'; // Ensure you import your Child component
+import React, { useState } from "react";
+import './../styles/App.css';
+import TodoList from "./TodoList";
+
+const todoList = [
+    { id: 1, text: 'Learn React', completed: false },
+    { id: 2, text: 'Build a React app', completed: false },
+    { id: 3, text: 'Deploy the React app', completed: false }
+]
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    { text: 'Learn React', completed: false },
-    { text: 'Build a React app', completed: false },
-    { text: 'Deploy the React app', completed: false },
-  ]);
+    const [todos, setTodos] = useState(todoList);
 
-  const handleComplete = (index) => {
-    // Update the todos state to mark the todo as completed
-    setTodos(prevTodos => 
-      prevTodos.map((todo, i) => 
-        i === index ? { ...todo, completed: true } : todo
-      )
-    );
+
+
+  const handleComplete=(id)=>{
+      const reWrite=todos.map(todo=>todo.id===id?{...todo, completed:true}: todo)
+      setTodos(reWrite)
   }
-
+  
   return (
     <div>
-      <h1>Parent Component</h1>
-      <h2>Child Component</h2>
-      {todos.map((todo, index) => (
-        <Child 
-          key={index} 
-          value={todo.text} 
-          completed={todo.completed} 
-          handle={() => handleComplete(index)} 
-        />
-      ))}
+        {/* Do not remove the main div */}
+        <h1>Parent component</h1>
+        <TodoList todos = {todos} handleComplete = {handleComplete}/> 
+        {/* <Parent/> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
